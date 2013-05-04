@@ -11,12 +11,11 @@
 <body>
 
   <div id="content">
+    <div id="header"></div>
 
     <div id="map-canvas"></div>
 
-    <div id="title">
-      <input type="text" id="searchTextField" placeholder="Dude, give your trip a name">
-    </div>
+    
 
     <div id="bottom-bar"></div>
 
@@ -24,8 +23,11 @@
 
   <div id="trip-list">
     <img src="img/logo.png" alt="" id="logo" />  
-      <ul>
-      </ul>
+    <div id="search">
+      <input type="text" id="searchTextField" placeholder="Where do you want to go?">
+    </div>
+    <ul>
+    </ul>
   </div>
 
   <script id="tmp-locations-list" type="text/handlebars">

@@ -6,7 +6,12 @@ var app = {
       models: {},
       collections: {},
       views: {}
-    }
+    },
+    daysList:{
+      models: {},
+      collections: {},
+      views: {}
+    },
   },
   models: {},
   collections: {},

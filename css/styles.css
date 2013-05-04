@@ -80,7 +80,20 @@ body {
   left: 20%;
 }
 
-#title {
+#search {
+  background: #f9f9f9;
+  position: relative;
+  padding: 11px 15px;
+  height: 40px;
+}
+
+#search input {
+  font-size: 15px;
+  background: #f9f9f9;
+  width: 80%;
+}
+
+#header {
   background: #f9f9f9;
   position: relative;
   box-shadow: 3px 3px 4px rgba(0,0,0,0.15);
@@ -88,11 +101,8 @@ body {
   height: 40px;
 }
 
-#title input {
-  font-size: 15px;
-  background: #f9f9f9;
-  width: 80%;
-}
+
+
 
 #bottom-bar {
   position: relative;
