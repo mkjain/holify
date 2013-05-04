@@ -6,7 +6,7 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(app.templates.locationsList(this.model.toJSON()));
+    this.$el.html(app.templates.locationsList(this.collection.toJSON()));
   }
 
 });

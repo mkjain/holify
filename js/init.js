@@ -4,10 +4,12 @@ var app = {
   sections: {
     locationsList: {
       models: {},
+      collections: {},
       views: {}
     }
   },
   models: {},
+  collections: {},
   views: {},
   templates: {}
 };
@@ -16,9 +18,34 @@ $(function() {
 
   app.templates.locationsList = Handlebars.compile($("#tmp-locations-list").html());
 
-  app.models.locationsList = new app.sections.locationsList.models.LocationsList();
+  app.collections.locationsList = new app.sections.locationsList.collections.LocationsList([
+    {
+      "id": "-ItkXsoRw17DeijV14Zh",
+      "city" : "berlin",
+      "name" : "Victory Column",
+      "rating" : 4.7,
+      "money" : 5,
+      "time" : 30,
+      "coordinates" : {
+        "lon" : 13.447179,
+        "lat" : 52.511467
+      }
+    },
+    {
+      "id": "-ItkXsoRw17DeijV14Zh",
+      "city" : "berlin",
+      "name" : "Victory Column",
+      "rating" : 4.7,
+      "money" : 5,
+      "time" : 30,
+      "coordinates" : {
+        "lon" : 13.447179,
+        "lat" : 52.511467
+      }
+    }
+  ]);
   app.views.locationsList = new app.sections.locationsList.views.LocationsList({
-    model: app.models.locationsList
+    collection: app.collections.locationsList
   });
 
   app.views.locationsList.render();
