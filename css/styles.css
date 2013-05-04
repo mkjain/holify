@@ -43,7 +43,6 @@ body {
   top: 0;
   left: 0;
   border-top: 140px solid #eee;
-  border-bottom: 200px solid #eee;
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 0 15px;
@@ -85,7 +84,13 @@ body {
   color: #777;
 }
 
-#trip-list #recos {
+#trip-list h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#recos {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -97,7 +102,11 @@ body {
   width: 100%;
 }
 
-#trip-list #recos li strong {
+#recos li {
+  padding: 5px;
+}
+
+#recos li strong {
   display: block;
   font-size: 14px;
   margin-bottom: 2px;
@@ -106,7 +115,7 @@ body {
   text-overflow: ellipsis;
 }
 
-#trip-list #recos li div {
+#recos li div {
   font-size: 12px;
   overflow: hidden;
   white-space: nowrap;

@@ -1,6 +1,6 @@
 app.sections.locationsList.views.RecosList = Backbone.View.extend({
 
-  el: "#recos",
+  el: "#recos ul",
 
   initialize: function() {
     _.bindAll(this, "render");
