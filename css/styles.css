@@ -24,7 +24,8 @@ body {
   background: #eee;
   box-shadow: 3px 0 4px rgba(0,0,0,0.15);
   padding: 15px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 #trip-list ul {
