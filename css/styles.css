@@ -24,19 +24,32 @@ body {
   background: #eee;
   box-shadow: 3px 0 4px rgba(0,0,0,0.15);
   padding: 15px;
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
-#trip-list .logo {
+#trip-list #logo {
   margin-bottom: 7px;
+  position: relative;
+  z-index: 1;
 }
 
 #trip-list ul {
   list-style: none;
 }
 
-#trip-list li {
+#trip-list #list {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 140px solid #eee;
+  border-bottom: 200px solid #eee;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 0 15px;
+}
+
+#trip-list #list li {
   border-radius: 5px;
   padding: 5px 5px 5px 55px;
   height: 50px;
@@ -44,18 +57,18 @@ body {
   position: relative;
 }
 
-#trip-list li:hover {
+#trip-list #list li:hover {
   background: #e1e1e1;
   cursor: pointer;
 }
 
-#trip-list .trip-image {
+#trip-list #list .trip-image {
   position: absolute;
   top: 5px;
   left: 5px;
 }
 
-#trip-list li strong {
+#trip-list #list li strong {
   display: block;
   font-size: 16px;
   margin-bottom: 2px;
@@ -64,8 +77,37 @@ body {
   text-overflow: ellipsis;
 }
 
-#trip-list li div {
+#trip-list #list li div {
   font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #777;
+}
+
+#trip-list #recos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #eee;
+  padding: 15px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 200px;
+  width: 100%;
+}
+
+#trip-list #recos li strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#trip-list #recos li div {
+  font-size: 12px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -85,6 +127,10 @@ body {
   position: relative;
   padding: 11px 15px;
   height: 40px;
+  border-radius: 3px;
+  margin-bottom: 13px;
+  position: relative;
+  z-index: 1;
 }
 
 #search input {
@@ -100,9 +146,6 @@ body {
   padding: 11px 15px;
   height: 40px;
 }
-
-
-
 
 #bottom-bar {
   position: relative;

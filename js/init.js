@@ -20,14 +20,15 @@ var app = {
 };
 
 $(function() {
+
   app.templates.locationsList = Handlebars.compile($("#tmp-locations-list").html());
+  app.templates.recosList = Handlebars.compile($("#tmp-recos-list").html());
 
   app.collections.locationsList = new app.sections.locationsList.collections.LocationsList();
 
   app.views.locationsList = new app.sections.locationsList.views.LocationsList({
     collection: app.collections.locationsList
   });
-
 
 
 var berlin = new google.maps.LatLng(52.520816, 13.410186);
@@ -103,7 +104,11 @@ function callbackWithRoute(results, status) {
     var end;
     var waypts = [];
 
-                console.log(results);
+    app.collections.recosList = new app.sections.locationsList.collections.RecosList(results);
+    app.views.recosList = new app.sections.locationsList.views.RecosList({
+      collection: app.collections.recosList
+    });
+    app.views.recosList.render();
 
     for (var i = 0; i < results.length; i++) {
       var place = results[i];

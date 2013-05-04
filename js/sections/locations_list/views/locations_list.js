@@ -1,6 +1,6 @@
 app.sections.locationsList.views.LocationsList = Backbone.View.extend({
 
-  el: "#trip-list ul",
+  el: "#trip-list #list",
 
   initialize: function() {
     _.bindAll(this, "render");
