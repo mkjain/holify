@@ -168,9 +168,10 @@ function createPhotoMarker(place) {
       infoWindow.open(map, marker);
 
       app.collections.locationsList.add({"name": result.name,
+                                         "trip_id": "-ItkbSNXKd161JPpvfBh"
                                          "lat":result.geometry.location.lat(),
                                          "lon":result.geometry.location.lng(),
-                                         "rating":result.rating,
+                                         "rating":(result.rating || null),
                                          "address":result.vicinity,
                                          "photo":result.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}),
                                          "type":result.types[0]
