@@ -3,3 +3,8 @@
   padding: 0;
   margin: 0;
 }
+
+#map-canvas {
+  width: 600px;
+  height: 600px;
+}
