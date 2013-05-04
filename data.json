@@ -1,0 +1,43 @@
+//time is always minutes - money euros. rest is self explanatory :) 
+{
+  "attraction" : {
+    "-ItkXsoRw17DeijV14Zh" : {
+      "city" : "berlin",
+      "name" : "Victory Column",
+      "rating" : 4.7,
+      "money" : 5,
+      "time" : 30,
+      "coordinates" : {
+        "lon" : 13.447179,
+        "lat" : 52.511467
+      }
+    }
+  },
+  "journey" : {
+    "-Itk_O5kfm6gKq47NEU8" : {
+      "end" : "2013-09-14T11:15:37+0100",
+      "transport" : "train",
+      "start" : "2013-09-14T09:43:37+0100",
+      "details" : "RE1234 from Hamburg to Berlin. Reservation number XYZZY 123"
+    }
+  },
+  "day" : {
+    "-ItkaCb7GXbGkXWL7f9M" : {
+      "timeSpent" : 30,
+      "moneySpent" : 5,
+      "date" : "2013-09-14",
+      "attractions" : [ "-ItkXsoRw17DeijV14Zh" ]
+    }
+  },
+  "trip" : {
+    "-ItkbSNXKd161JPpvfBh" : {
+      "journeys" : [ "-Itk_O5kfm6gKq47NEU8" ],
+      "version" : "1",
+      "name" : "toby's day trip to Berlin",
+      "days" : [ "-ItkaCb7GXbGkXWL7f9M" ],
+      "owner" : "1",
+      "endDate" : "2013-09-14",
+      "startDate" : "2013-09-14"
+    }
+  }
+}
