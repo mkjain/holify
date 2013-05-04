@@ -14,10 +14,14 @@ var app = {
 
 $(function() {
 
-  app.models.locationsList = new app.sections.locationsList.models.LocationsList();
-  app.views.locationsList = new app.sections.locationsList.views.LocationsList();
-
   app.templates.locationsList = Handlebars.compile($("#tmp-locations-list").html());
+
+  app.models.locationsList = new app.sections.locationsList.models.LocationsList();
+  app.views.locationsList = new app.sections.locationsList.views.LocationsList({
+    model: app.models.locationsList
+  });
+
+  app.views.locationsList.render();
 
   var mapOptions = {
     center: new google.maps.LatLng(37.76040136229719, -122.41928100585938),
