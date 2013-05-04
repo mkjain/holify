@@ -2,22 +2,38 @@
   border: 0;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
 
 #trip-list {
-  width: 25%;
+  width: 20%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   background: #eee;
-  box-shadow: 4px 0 4px rgba(0,0,0,0.2)
+  box-shadow: 4px 0 4px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+#bottom-bar {
+  width: 80%;
+  height: 20%;
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  box-shadow: 4px 0 4px rgba(0,0,0,0.2);
 }
 
 #map-canvas {
-  width: 75%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   position: absolute;
   top: 0;
-  left: 25%;
+  left: 20%;
 }
+
