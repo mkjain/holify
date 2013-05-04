@@ -24,7 +24,7 @@ $(function() {
   });
 
 
-  
+
 var berlin = new google.maps.LatLng(52.520816, 13.410186);
 
 var neighborhoods = [
@@ -63,7 +63,6 @@ function initialize() {
   service = new google.maps.places.PlacesService(map);
 
   google.maps.event.addListener(map, 'idle', function() {
-    console.log('idle')
 
     var request = {
       location: map.getCenter(),
@@ -87,7 +86,6 @@ function initialize() {
     routeCalculated = false;
       var places = searchBox.getPlaces();
       if (places.length != 0) {
-        console.log(places[0].geometry.location)
         map.setCenter(places[0].geometry.location)
       }
   });
@@ -99,6 +97,9 @@ function callbackWithRoute(results, status) {
     var start;
     var end;
     var waypts = [];
+
+                console.log(results);
+
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
       createPhotoMarker(results[i]);
@@ -189,7 +190,6 @@ function createMarker(place) {
       }
       infoWindow.setContent(result.name);
       infoWindow.open(map, marker);
-      console.log(result.name)
     });
   });
 }

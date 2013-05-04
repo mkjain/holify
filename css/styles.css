@@ -28,6 +28,10 @@ body {
   overflow-y: scroll;
 }
 
+#trip-list .logo {
+  margin-bottom: 7px;
+}
+
 #trip-list ul {
   list-style: none;
 }

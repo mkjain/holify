@@ -258,7 +258,6 @@ Backbone.Firebase.Collection = Backbone.Collection.extend({
         model = model.toJSON();
       }
       if (!model.id) {
-        console.log(this);
         model.id = this.firebase.ref().push().name();
       }
       ret.push(model);
