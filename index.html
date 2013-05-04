@@ -26,11 +26,13 @@
 
   <script id="tmp-locations-list" type="text/handlebars">
     <ul>
-      <li>
-        <img src="http://placekitten.com/40/40" width="40" height="40" class="trip-image">
-        <strong>Moscone Center</strong>
-        <div>Here we start our pretty awesome trip!</div>
-      </li>
+      {{#each this }}
+        <li>
+          <img src="http://placekitten.com/40/40" width="40" height="40" class="trip-image">
+          <strong>{{ name }}</strong>
+          <div>Here we start our pretty awesome trip!</div>
+        </li>
+      {{/each }}
     </ul>
   </script>
 
