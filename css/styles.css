@@ -4,7 +4,20 @@
   margin: 0;
 }
 
+#trip-list {
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #eee;
+  box-shadow: 4px 0 4px rgba(0,0,0,0.2)
+}
+
 #map-canvas {
-  width: 600px;
-  height: 600px;
+  width: 75%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 25%;
 }
