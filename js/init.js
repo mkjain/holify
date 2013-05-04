@@ -1,6 +1,24 @@
 "use strict";
 
+var app = {
+  sections: {
+    locationsList: {
+      models: {},
+      views: {}
+    }
+  },
+  models: {},
+  views: {},
+  templates: {}
+};
+
 $(function() {
+
+  app.models.locationsList = new app.sections.locationsList.models.LocationsList();
+  app.views.locationsList = new app.sections.locationsList.views.LocationsList();
+
+  app.templates.locationsList = Handlebars.compile($("#tmp-locations-list").html());
+
   var mapOptions = {
     center: new google.maps.LatLng(37.76040136229719, -122.41928100585938),
     zoom: 10,
