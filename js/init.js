@@ -167,7 +167,14 @@ function createPhotoMarker(place) {
       infoWindow.setContent(result.name);
       infoWindow.open(map, marker);
 
-      app.collections.locationsList.add({"name": result.name});
+      app.collections.locationsList.add({"name": result.name,
+                                         "lat":result.geometry.location.lat(),
+                                         "lon":result.geometry.location.lng(),
+                                         "rating":result.rating,
+                                         "address":result.vicinity,
+                                         "photo":result.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}),
+                                         "type":result.types[0]
+                                       });
     });
   });
 }
