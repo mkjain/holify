@@ -11,7 +11,8 @@
 <body>
 
   <div id="content">
-    <div id="header"></div>
+    <div id="header">
+    </div>
 
     <div id="map-canvas"></div>
 
@@ -28,14 +29,14 @@
     <ul id="list"></ul>
     <img src="img/logo.png" alt="" id="logo" />  
     <div id="search">
-      <input type="text" id="searchTextField" placeholder="Where do you want to go?">
+      <input type="text" id="searchTextField" placeholder="Where are you going?">
     </div>
   </div>
 
   <script id="tmp-locations-list" type="text/handlebars">
     {{#each this }}
       <li>
-        <img src="http://placekitten.com/40/40" width="40" height="40" class="trip-image">
+        <img src="{{ photo }}" width="40" height="40" class="trip-image">
         <strong>{{ name }}</strong>
         <div>{{ address }}</div>
       </li>
