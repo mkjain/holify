@@ -24,6 +24,7 @@ body {
   background: #eee;
   box-shadow: 3px 0 4px rgba(0,0,0,0.15);
   padding: 15px;
+  overflow: hidden;
 }
 
 #trip-list ul {
@@ -53,6 +54,9 @@ body {
   display: block;
   font-size: 16px;
   margin-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #trip-list li div {
