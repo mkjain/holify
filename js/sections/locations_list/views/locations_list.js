@@ -3,7 +3,8 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
   el: "#trip-list #list",
 
   events: {
-    "click li .remove": "onClick"
+    "click li"        : "onClick",
+    "click li .remove": "onRemoveClick"
   },
 
   initialize: function() {
@@ -15,12 +16,20 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
     this.$el.html(app.templates.locationsList(this.collection.toJSON()));
   },
 
-  onClick: function(event) {
+  onRemoveClick: function(event) {
     var id = $(event.currentTarget).parent().data("id"),
         model = this.collection.get(id);
 
-
     model.destroy();
+  },
+
+  onClick: function(event) {
+    var id = $(event.currentTarget).data("id"),
+        modelData = this.collection.get(id).toJSON();
+
+    event.stopPropagation();
+
+    app.map.setCenter(new google.maps.LatLng(modelData.lat, modelData.lon));
   }
 
 });
