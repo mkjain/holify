@@ -21,12 +21,18 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
     }.bind(this), 1000);
   },
 
+  update: function() {
+    return this.updateRoute;
+  },
+
   updateRoute: function() {
     // your call goes here
 
     window.setTimeout(function() {
       this.updateRoute();
-      this.update = this.updateRoute;
+      this.update = function() {
+        return this.updateRoute;
+      };
     }.bind(this), 2000);
   },
 
