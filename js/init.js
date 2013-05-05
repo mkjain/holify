@@ -43,7 +43,6 @@ $(function() {
     collection: app.collections.locationsList
   });
 
-
 var berlin = new google.maps.LatLng(52.520816, 13.410186);
 
 var neighborhoods = [
@@ -60,7 +59,6 @@ var iterator = 0;
 
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
-var map;
 var infoWindow;
 var service;
 
@@ -74,17 +72,17 @@ function initialize() {
     center: berlin
   };
 
-  map = new google.maps.Map(document.getElementById('map-canvas'),
+  app.map = new google.maps.Map(document.getElementById('map-canvas'),
           mapOptions);
-  directionsDisplay.setMap(map);
+  directionsDisplay.setMap(app.map);
 
   infoWindow = new google.maps.InfoWindow();
-  service = new google.maps.places.PlacesService(map);
+  service = new google.maps.places.PlacesService(app.map);
 
-  google.maps.event.addListener(map, 'idle', function() {
+  google.maps.event.addListener(app.map, 'idle', function() {
 
     var request = {
-      location: map.getCenter(),
+      location: app.map.getCenter(),
       radius: '5000',
       types: ['museum']
     };
@@ -105,7 +103,7 @@ function initialize() {
     routeCalculated = false;
       var places = searchBox.getPlaces();
       if (places.length != 0) {
-        map.setCenter(places[0].geometry.location)
+        app.map.setCenter(places[0].geometry.location)
       }
   });
 
@@ -166,7 +164,7 @@ function createPhotoMarker(place) {
   }
 
   var marker = new google.maps.Marker({
-    map: map,
+    map: app.map,
     position: place.geometry.location,
     title: place.name,
     icon: photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50})
@@ -179,7 +177,7 @@ function createPhotoMarker(place) {
         return;
       }
       infoWindow.setContent(result.name);
-      infoWindow.open(map, marker);
+      infoWindow.open(app.map, marker);
 
       app.collections.locationsList.add({"name": result.name,
                                          "day_id": "-ItkaCb7GXbGkXWL7f9M",
@@ -196,7 +194,7 @@ function createPhotoMarker(place) {
 
 function createMarker(place) {
   var marker = new google.maps.Marker({
-    map: map,
+    map: app.map,
     position: place.geometry.location,
     icon: {
       // Star
@@ -216,7 +214,7 @@ function createMarker(place) {
         return;
       }
       infoWindow.setContent(result.name);
-      infoWindow.open(map, marker);
+      infoWindow.open(app.map, marker);
     });
   });
 }
@@ -224,7 +222,7 @@ function createMarker(place) {
 function addMarker() {
   var marker = new google.maps.Marker({
     position: neighborhoods[iterator],
-    map: map,
+    map: app.map,
     draggable: false,
     animation: google.maps.Animation.DROP
   });
@@ -232,7 +230,7 @@ function addMarker() {
 
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.setContent('test');
-    infoWindow.open(map,marker);
+    infoWindow.open(app.map,marker);
   });
 
   iterator++;
@@ -283,9 +281,6 @@ function calcRoute(start, end, waypt) {
   });
 }
 
-
-
-
-
 google.maps.event.addDomListener(window, 'load', initialize);
+
 });
