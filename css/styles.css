@@ -205,16 +205,13 @@ body {
 
 #saveTrip {
   background-color: #3C5B9F;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
+  border-radius: 3px;
   border:1px solid #dcdcdc;
   display:inline-block;
   color: #eee;
   font-size:14px;
   padding:4px 10px;
   text-decoration:none;
-  text-shadow:1px 1px 0px #rgba(0,0,0,0.2);
   position: absolute;
   top: 7px;
   right: 10px;
