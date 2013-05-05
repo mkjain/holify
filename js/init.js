@@ -12,6 +12,9 @@ var app = {
       collections: {},
       views: {}
     },
+    header: {
+      views: {}
+    }
   },
   models: {},
   collections: {},
@@ -33,6 +36,11 @@ $(function() {
 
   app.views.recosList = new app.sections.locationsList.views.RecosList({
     collection: app.collections.recosList
+  });
+
+  app.views.header = new app.sections.header.views.Header();
+  app.views.dayList = new app.sections.daysList.views.DaysList({
+    collection: app.collections.locationsList
   });
 
 

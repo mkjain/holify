@@ -1,6 +1,6 @@
 app.sections.daysList.views.DaysList = Backbone.View.extend({
 
-  el: "#day-list",
+  el: "#bottom-bar",
 
   initialize: function() {
     _.bindAll(this, "render");
@@ -8,7 +8,7 @@ app.sections.daysList.views.DaysList = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(app.templates.daysList(this.collection.toJSON()));
+    this.$("li.active .count").html(this.collection.toJSON().length);
   }
 
 });

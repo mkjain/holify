@@ -193,7 +193,6 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;  
-  z-index: 1;
 }
 
 #bottom-bar {
@@ -217,7 +216,7 @@ body {
 
 #trip-name #tripNameField {
   font-size: 15px;
-  background: #ffffff;
+  background: #f9f9f9;
   width: 30%;
   height: 100%;
   padding-left: 5px;
