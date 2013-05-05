@@ -171,16 +171,16 @@ app.calcRoute = function() {
     var place = col[i];
       //console.log(app.collections.locationsList.toJSON())
       if (i == 0) {
-        start = place.name
+        start = place.lat + "," + place.lon
         //createPhotoMarker(place);
       } else if (i == col.length - 1) {
-        end = place.name
+        end = place.lat + "," + place.lon
         //createPhotoMarker(place);
         //google has a limit on stopover points
       } else if (i < 8) {
         //createPhotoMarker(place);
         waypts.push({
-          location:place.name,
+          location:place.lat + "," + place.lon,
           stopover:true});
       }
     }
@@ -325,6 +325,8 @@ function calcRoute(start, end, waypt) {
       //  summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
       //  summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
       //  }
+    } else {
+      console.log("DirectionsStatus error")
     }
   });
 }
