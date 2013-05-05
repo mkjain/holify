@@ -12,8 +12,17 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
     this.collection.on("all", this.render);
   },
 
-  render: function() {
+  render: function(event) {
     this.$el.html(app.templates.locationsList(this.collection.toJSON()));
+
+    window.setTimeOut(function() {
+      this.updateRoute();
+      this.updateRoute = function() {};
+    }, 1000);
+  },
+
+  updateRoute: function() {
+    // your call goes here
   },
 
   onRemoveClick: function(event) {
