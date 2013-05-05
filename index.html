@@ -26,7 +26,25 @@
       <ul></ul>
     </div>
 
-    <div id="bottom-bar"></div>
+    <div id="bottom-bar">
+      <ul>
+        <li>
+          <div class="date">29.05.1987</div>
+          <div class="count">23</div>
+          <div class="def">Entries</div>
+        </li>
+        <li>
+          <div class="date">30.05.1987</div>
+          <div class="count">10</div>
+          <div class="def">Entries</div>
+        </li>
+        <li>
+          <div class="date">31.05.1987</div>
+          <div class="count">14</div>
+          <div class="def">Entries</div>
+        </li>
+      </ul>
+    </div>
 
   </div>
 
@@ -50,7 +68,7 @@
 
   <script id="tmp-recos-list" type="text/handlebars">
     {{#each this }}
-      <li>
+      <li data-id="{{ id }}">
         <strong>{{ name }}</strong>
         <div>Here we start our pretty awesome trip!</div>
       </li>
