@@ -126,8 +126,9 @@ body {
   font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   padding: 0 5px;
+  color: #888;
 }
 
 #recos li {
@@ -190,13 +191,42 @@ body {
   position: relative;
   box-shadow: 3px 3px 4px rgba(0,0,0,0.15);
   height: 40px;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 5px;
-  padding-left: 5px;  
+  padding-left: 15px;  
+}
+
+#trip-name #tripNameField {
+  font-size: 15px;
+  background: #f9f9f9;
+  width: 30%;
+  padding-left: 5px;
+}
+
+#saveTrip {
+  background-color: #3C5B9F;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color: #eee;
+  font-size:14px;
+  padding:4px 10px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #rgba(0,0,0,0.2);
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#saveTrip:active {
+  position:relative;
+  top:1px;
 }
 
 #bottom-bar {
-  position: relative;
   background: #f9f9f9;
   width: 100%;
   height: 120px;
@@ -205,55 +235,6 @@ body {
   left: 0;
   box-shadow: 3px -3px 4px rgba(0,0,0,0.15);
 }
-
-#trip-name {
-  background: #f9f9f9;
-  position: relative;
-  height: 90%;
-  margin-left: 2%;
-  z-index: 1000;
-}
-
-#trip-name #tripNameField {
-  font-size: 15px;
-  background: #f9f9f9;
-  width: 30%;
-  height: 100%;
-  padding-left: 5px;
-}
-
-#saveTrip {
-  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-  box-shadow:inset 0px 1px 0px 0px #ffffff;
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-  background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-  background-color:#ededed;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #dcdcdc;
-  display:inline-block;
-  color:#777777;
-  font-family:arial;
-  font-size:15px;
-  font-weight:bold;
-  padding:6px 24px;
-  text-decoration:none;
-  text-shadow:1px 1px 0px #ffffff;
-}
-#saveTrip:hover {
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-  background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-  background-color:#dfdfdf;
-}
-#saveTrip:active {
-  position:relative;
-  top:1px;
-}
-
 
 #bottom-bar ul {
   padding: 15px 20px;
