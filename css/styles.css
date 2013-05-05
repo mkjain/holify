@@ -42,7 +42,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border-top: 140px solid #eee;
+  border-top: 155px solid #eee;
+  border-bottom: 15px solid #eee;
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 0 15px;
@@ -59,6 +60,10 @@ body {
 #trip-list #list li:hover {
   background: #e1e1e1;
   cursor: pointer;
+}
+
+#trip-list #list li:hover strong {
+  color: #3c5b9f;
 }
 
 #trip-list #list .trip-image {
@@ -113,6 +118,10 @@ body {
 #recos li:hover {
   background: #e1e1e1;
   cursor: pointer;
+}
+
+#recos li:hover strong {
+  color: #3c5b9f;
 }
 
 #recos li strong {
