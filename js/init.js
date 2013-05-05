@@ -83,7 +83,7 @@ function initialize() {
 
     var request = {
       location: app.map.getCenter(),
-      radius: '5000',
+      radius: '1000',
       types: ['museum','night_club', 'zoom', 'art_gallery']
     };
     service.nearbySearch(request, callbackWithRoute);
