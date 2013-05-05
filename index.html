@@ -16,13 +16,23 @@
     <div id="header">
       <div id="trip-name">
         <input type="text" id="tripNameField" placeholder="Name Your Trip!">
-        <img id="buynow" alt="" border="0" src="img/buttons.png" >
+        <button type="button" id="saveTrip">Save as PDF</button>
+        <form id="buynow" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="buy@travelo.me">
+        <input type="hidden" name="lc" value="US">
+        <input type="hidden" name="item_name" value="Travelo PDF">
+        <input type="hidden" name="item_number" value="1234">
+        <input type="hidden" name="amount" value="1.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="button_subtype" value="services">
+        <input type="hidden" name="no_note" value="0">
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
       </div>
-
-
     </div>
-
-
 
     <div id="recos">
       <h3>Recommendations</h3>
