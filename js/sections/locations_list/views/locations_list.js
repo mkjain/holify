@@ -15,7 +15,7 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
   render: function(event) {
     this.$el.html(app.templates.locationsList(this.collection.toJSON()));
 
-    window.setTimeOut(function() {
+    window.setTimeout(function() {
       this.update();
       this.update = $.noop;
     }.bind(this), 1000);
@@ -24,7 +24,7 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
   updateRoute: function() {
     // your call goes here
 
-    window.setTimeOut(function() {
+    window.setTimeout(function() {
       this.updateRoute();
       this.update = this.updateRoute;
     }.bind(this), 2000);
