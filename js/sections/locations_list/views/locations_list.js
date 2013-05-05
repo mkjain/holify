@@ -29,7 +29,7 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
 
     event.stopPropagation();
 
-    app.map.setCenter(new google.maps.LatLng(modelData.lat, modelData.lon));
+    app.map.panTo(new google.maps.LatLng(modelData.lat, modelData.lon));
   }
 
 });
