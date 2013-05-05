@@ -20,7 +20,9 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
     var id = $(event.currentTarget).parent().data("id"),
         model = this.collection.get(id);
 
-    model.destroy();
+    event.stopPropagation();
+
+    this.collection.remove(model);
   },
 
   onClick: function(event) {
