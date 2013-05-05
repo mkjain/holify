@@ -89,7 +89,7 @@ body {
   bottom: 150px;
   right: 20px;
   background: #eee;
-  padding: 15px;
+  padding: 15px 10px;
   overflow-x: hidden;
   overflow-y: scroll;
   max-height: 200px;
@@ -99,14 +99,20 @@ body {
 }
 
 #recos h3 {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  padding: 0 5px;
 }
 
 #recos li {
-  padding: 5px 0;
+  padding: 5px;
+}
+
+#recos li:hover {
+  background: #e1e1e1;
+  cursor: pointer;
 }
 
 #recos li strong {

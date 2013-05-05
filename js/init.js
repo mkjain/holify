@@ -25,9 +25,14 @@ $(function() {
   app.templates.recosList = Handlebars.compile($("#tmp-recos-list").html());
 
   app.collections.locationsList = new app.sections.locationsList.collections.LocationsList();
+  app.collections.recosList = new app.sections.locationsList.collections.RecosList();
 
   app.views.locationsList = new app.sections.locationsList.views.LocationsList({
     collection: app.collections.locationsList
+  });
+
+  app.views.recosList = new app.sections.locationsList.views.RecosList({
+    collection: app.collections.recosList
   });
 
 
@@ -104,11 +109,7 @@ function callbackWithRoute(results, status) {
     var end;
     var waypts = [];
 
-    app.collections.recosList = new app.sections.locationsList.collections.RecosList(results);
-    app.views.recosList = new app.sections.locationsList.views.RecosList({
-      collection: app.collections.recosList
-    });
-    app.views.recosList.render();
+    app.collections.recosList.add(results);
 
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
