@@ -119,26 +119,75 @@ function callbackWithRoute(results, status) {
 
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
-      createPhotoMarker(results[i]);
+      createPhotoMarker(place);
 
+     // if (i == 0) {
+     //   start = place.name
+     //   createPhotoMarker(place);
+     // } else if (i == results.length - 1) {
+     //   end = place.name
+     //   createPhotoMarker(place);
+     //   //google has a limit on stopover points
+     // } else if (i < 8) {
+     //   createPhotoMarker(place);
+     //   waypts.push({
+     //     location:place.name,
+     //     stopover:true});
+     // }
+    }
+    //if (!routeCalculated) {
+    //  var col = app.collections.locationsList.toJSON()
+    //  for (var i = 0; i < col.length; i++) {
+    //    var place = col[i];
+    //    //console.log(app.collections.locationsList.toJSON())
+    //    if (i == 0) {
+    //      start = place.name
+    //      //createPhotoMarker(place);
+    //    } else if (i == col.length - 1) {
+    //      end = place.name
+    //      //createPhotoMarker(place);
+    //      //google has a limit on stopover points
+    //    } else if (i < 8) {
+    //      //createPhotoMarker(place);
+    //      waypts.push({
+    //        location:place.name,
+    //        stopover:true});
+    //    }
+    //  }
+    // calcRoute(start,end, waypts)
+    // routeCalculated = true;
+    //}
+  }
+}
+
+app.calcRoute = function() {
+
+  var start;
+  var end;
+  var waypts = [];
+  var col = app.collections.locationsList.toJSON()
+  console.log(col)
+  for (var i = 0; i < col.length; i++) {
+    var place = col[i];
+      //console.log(app.collections.locationsList.toJSON())
       if (i == 0) {
         start = place.name
-      } else if (i == results.length - 1) {
+        //createPhotoMarker(place);
+      } else if (i == col.length - 1) {
         end = place.name
+        //createPhotoMarker(place);
         //google has a limit on stopover points
       } else if (i < 8) {
+        //createPhotoMarker(place);
         waypts.push({
           location:place.name,
           stopover:true});
       }
     }
-    if (!routeCalculated) {
-     calcRoute(start,end, waypts)
-     routeCalculated = true;
-    }
-
-  }
+    calcRoute(start,end, waypts)
 }
+
+
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -244,8 +293,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 function calcRoute(start, end, waypt) {
-  //var start = 'Alexanderplatz, berlin';
-  //var end = 'Potsdamer Platz, berlin';
+  console.log(waypts)
   var waypts = [];
   var checkboxArray = document.getElementById('waypoints');
   for (var i = 0; i < neighborhoods.length; i++) {
