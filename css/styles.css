@@ -51,7 +51,7 @@ body {
 
 #trip-list #list li {
   border-radius: 5px;
-  padding: 5px 5px 5px 55px;
+  padding: 5px 15px 5px 55px;
   height: 50px;
   margin-bottom: 8px;
   position: relative;
@@ -74,7 +74,7 @@ body {
 
 #trip-list #list li strong {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 2px;
   overflow: hidden;
   white-space: nowrap;
@@ -87,6 +87,25 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #777;
+}
+
+#trip-list #list .remove {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: none;
+  font-size: 9px;
+  display: none;
+  background: url(../img/remove.png) no-repeat 2px 2px;
+  text-indent: -9999px;
+  color: #eee;
+  width: 11px;
+  height: 11px;
+  opacity: 0.8;
+}
+
+#trip-list #list li:hover .remove {
+  display: block;
 }
 
 #recos {

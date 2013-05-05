@@ -13,9 +13,8 @@
   <div id="content">
     <div id="header">
       <div id="trip-name">
-              <input type="text" id="tripNameField" placeholder="Name Your Trip!">
-                    <button type="button" id="saveTrip">Save as PDF</button>                   
-
+        <input type="text" id="tripNameField" placeholder="Name Your Trip!">
+        <button type="button" id="saveTrip">Save as PDF</button>
       </div>
     </div>
 
@@ -61,10 +60,11 @@
 
   <script id="tmp-locations-list" type="text/handlebars">
     {{#each this }}
-      <li>
-        <img src="{{ photo }}" width="40" height="40" class="trip-image">
+      <li data-id="{{ id }}">
+        <img src="{{ photo }}" width="35" height="35" class="trip-image">
         <strong>{{ name }}</strong>
         <div>{{ address }}</div>
+        <a href="#" class="remove">X</a>
       </li>
     {{/each }}
   </script>
