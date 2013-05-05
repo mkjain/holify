@@ -204,9 +204,18 @@ body {
 }
 
 #saveTrip {
-  background-color: #3C5B9F;
-  border-radius: 3px;
-  border:1px solid #dcdcdc;
+  display:inline-block;
+  color: #eee;
+  font-size:14px;
+  padding:4px 10px;
+  text-decoration:none;
+  position: absolute;
+  top: 7px;
+  right: 120px;
+  cursor: pointer;
+}
+
+#buynow {
   display:inline-block;
   color: #eee;
   font-size:14px;
