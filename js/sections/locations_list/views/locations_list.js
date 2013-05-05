@@ -8,32 +8,27 @@ app.sections.locationsList.views.LocationsList = Backbone.View.extend({
   },
 
   initialize: function() {
-    _.bindAll(this, "render");
+    _.bindAll(this, "render", "updateRoute");
     this.collection.on("all", this.render);
   },
 
   render: function(event) {
+    var update = this.updateRoute;
+
     this.$el.html(app.templates.locationsList(this.collection.toJSON()));
 
     window.setTimeout(function() {
-      this.update()();
-      this.update = $.noop;
+      update();
+      update = $.noop;
     }.bind(this), 1000);
-  },
 
-  update: function() {
-    return this.updateRoute;
+    window.setTimeout(function() {
+      update = this.updateRoute;
+    }.bind(this), 2000);
   },
 
   updateRoute: function() {
-    app.calcRoute()
-
-    window.setTimeout(function() {
-      this.updateRoute();
-      this.update = function() {
-        return this.updateRoute;
-      };
-    }.bind(this), 2000);
+    app.calcRoute();
   },
 
   onRemoveClick: function(event) {
